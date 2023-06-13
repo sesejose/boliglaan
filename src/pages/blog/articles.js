@@ -25,7 +25,7 @@ export default function ArticlesPage({ articles }) {
 
 // Fetch Article from Wordpress API
 export async function getServerSideProps() {
-  const url = "https://sesejose.com/kea/wp_boliglaan/wp-json/wp/v2/article?_embed";
+  const url = "http://sesejose.com/kea/wp_boliglaan/wp-json/wp/v2/article?_embed";
   // Await then execute the code.
   const res = await fetch(url); // Fetchs the data (await)
   const articles = await res.json(); // After getting the data convert it to json.
