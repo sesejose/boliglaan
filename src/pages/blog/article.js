@@ -15,7 +15,7 @@ export default function ArticlePage({ articles }) {
 
   useEffect(() => {
     async function gettingId() {
-      const url = "http://sesejose.com/kea/wp_boliglaan/wp-json/wp/v2/article/" + id + "?_embed";
+      const url = "https://sesejose.com/kea/wp_boliglaan/wp-json/wp/v2/article/" + id + "?_embed";
       console.log(id);
       // Await then execute the code.
       const res = await fetch(url); // Fetchs the data (await)
@@ -73,7 +73,7 @@ export default function ArticlePage({ articles }) {
 
 // Fetch Article from Wordpress API
 export async function getServerSideProps() {
-  const url = "http://sesejose.com/kea/wp_boliglaan/wp-json/wp/v2/article?_embed=1&per_page=4";
+  const url = "https://sesejose.com/kea/wp_boliglaan/wp-json/wp/v2/article?_embed=1&per_page=4";
   // Await then execute the code.
   const res = await fetch(url); // Fetchs the data (await)
   const articles = await res.json(); // After getting the data convert it to json.
