@@ -10,7 +10,7 @@ import { useState, useContext } from "react";
 import Basket from "../../components/Basket";
 import { useEffect } from "react";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   const context = useContext(Context);
 
   // Input chat
@@ -137,5 +137,3 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
-
-export default MyApp;

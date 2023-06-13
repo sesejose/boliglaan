@@ -39,6 +39,11 @@ export default function Nav() {
                   <p>Om os</p>
                 </Link>
               </li>
+              <li>
+                <Link href={"/blog/articles"} onClick={closeMenu}>
+                  <p>Blog</p>
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="icons-nav-container">
@@ -100,6 +105,11 @@ export default function Nav() {
             <li>
               <Link className="" href={"/about"} onClick={closeMenu}>
                 <p>Om os</p>
+              </Link>
+            </li>
+            <li>
+              <Link href={"/blog/articles"} onClick={closeMenu}>
+                <p>Blog</p>
               </Link>
             </li>
             <li>
