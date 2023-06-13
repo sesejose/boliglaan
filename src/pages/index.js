@@ -21,6 +21,7 @@ export default function Home() {
         <title>Boliglån</title>
         <meta name="description" content="This is my KEA fourth semester Final Exam Project" />
         <meta name="keywords" content="NextJS - Crafted by José Francisco Sesé"></meta>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         {/* <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
       </Head>
       <HeroHome></HeroHome>
