@@ -41,7 +41,7 @@ export default function Nav() {
               </li>
               <li>
                 <Link href={"/blog/articles"} onClick={closeMenu}>
-                  <p>Blog</p>
+                  <p>Tips</p>
                 </Link>
               </li>
             </ul>
@@ -109,7 +109,7 @@ export default function Nav() {
             </li>
             <li>
               <Link href={"/blog/articles"} onClick={closeMenu}>
-                <p>Blog</p>
+                <p>Tips</p>
               </Link>
             </li>
             <li>

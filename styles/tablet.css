@@ -63,10 +63,22 @@
 
   .quote-container {
     width: 70%;
+    flex-direction: row;
   }
 
   .trustpilot img {
     width: 50%;
+  }
+
+  /* Slider */
+
+  .awssld__container {
+    padding-bottom: var(--slider-height-percentage-tablet) !important;
+  }
+
+  #other-courses .awssld__container,
+  #other-courses-desktop .awssld__container {
+    padding-bottom: var(--slider-height-percentage-tablet) !important;
   }
 
   /* Card Courses  */

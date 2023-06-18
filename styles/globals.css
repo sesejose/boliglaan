@@ -92,7 +92,8 @@
 
   /* Slider  */
   --slider-height-percentage: 100% !important;
-  --slider-height-percentage-tablet: 600px !important;
+  --slider-height-percentage-mobile: 700px !important;
+  --slider-height-percentage-tablet: 800px !important;
   --slider-height-percentage-desktop: 400px !important;
 
   /*background colors*/
@@ -1404,7 +1405,7 @@ footer ul li a.close {
 }
 
 .awssld__container {
-  padding-bottom: var(--slider-height-percentage-tablet) !important;
+  padding-bottom: var(--slider-height-percentage-mobile) !important;
 }
 
 .awssld__content {
@@ -1435,13 +1436,14 @@ footer ul li a.close {
 
 .quote-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 100%;
   width: 100%;
   gap: 1.25rem;
   text-align: center;
+  padding: var(--plr);
 }
 
 .awssld__bullets {
@@ -1556,7 +1558,7 @@ footer ul li a.close {
 
 #other-courses .awssld__container,
 #other-courses-desktop .awssld__container {
-  padding-bottom: var(--slider-height-percentage-tablet) !important;
+  padding-bottom: var(--slider-height-percentage-mobile) !important;
 }
 
 #other-courses-title {
