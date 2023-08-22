@@ -9,6 +9,7 @@ import Layout from "../../components/Layout";
 import { useState, useContext } from "react";
 import Basket from "../../components/Basket";
 import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function MyApp({ Component, pageProps }) {
   const context = useContext(Context);
@@ -134,6 +135,7 @@ export default function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </Layout>
       </Context.Provider>
+      <Analytics />
     </>
   );
 }

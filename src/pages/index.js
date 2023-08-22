@@ -10,7 +10,6 @@ import ThreeSteps from "../../components/ThreeSteps";
 import CoursesHome from "../../components/CoursesHome";
 import Newsletter from "../../components/Newsletter";
 import Quotes from "../../components/Quotes";
-import { Analytics } from "@vercel/analytics/react";
 
 // After ** Head ** I can include all the components for the homepage
 export default function Home() {
@@ -33,7 +32,6 @@ export default function Home() {
       <CoursesHome className="col-12"></CoursesHome>
       <Quotes className="col-12"></Quotes>
       <Newsletter className="col-12"></Newsletter>
-      <Analytics />
     </>
   );
 }
