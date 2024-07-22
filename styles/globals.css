@@ -21,7 +21,6 @@
 
 :root {
   --font: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
 
   --dark-blue: #023e7d;
   --ligh-blue: #006edc;
@@ -130,6 +129,10 @@
 
 .pt-mobile-medium {
   padding: var(--pt-mobile-medium) !important;
+}
+
+html {
+  font-size: 16px;
 }
 
 html,
