@@ -1350,7 +1350,7 @@ footer ul li a.close {
   padding: var(--p-mobile-medium);
   background-color: var(--green);
   color: var(--white);
-  padding: var(--p-mobile-medium);
+  gap: 1rem;
 }
 
 .advantage-et,
