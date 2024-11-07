@@ -2,39 +2,38 @@ import Link from "next/link";
 import StepsMobile from "../../../../../components/StepsMobile";
 import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
-import { postNyeBolig } from "../../../../../components/Post";
+import { postNyBolig } from "../../../../../components/Post";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { patchNyeBolig } from "../../../../../components/Patch";
+import { patchNyBolig } from "../../../../../components/Patch";
 
-Link;
 export default function Finansiering() {
   const context = useContext(Context);
   const router = useRouter();
 
   function errorMessage(e) {}
-  // Function Submit Nye Bolig 1
+  // Function Submit Ny Bolig 1
   function submit(e) {
     e.preventDefault();
     patchBolig();
-    context.setLaanebehov(context.nyeBolig.pris - context.nyeBolig.betaling);
+    context.setLaanebehov(context.nyBolig.pris - context.nyBolig.betaling);
     console.log(context.laanebehov);
-    router.push(`/loan/steps/01-din-nye-bolig/03-din-nye-bolig`);
+    router.push(`/loan/steps/01-din-ny-bolig/03-din-ny-bolig`);
   }
 
-  // Patch Nye Bolig in Supabase
+  // Patch Ny Bolig in Supabase
   async function patchBolig() {
-    const response = await patchNyeBolig({
+    const response = await patchNyBolig({
       // id: 1,
-      // type: context.nyeBolig.type,
-      // adresse: context.nyeBolig.adresse,
-      // postnr: context.nyeBolig.postnr,
-      // by: context.nyeBolig.by,
-      // land: context.nyeBolig.land,
-      pris: context.nyeBolig.pris,
-      betaling: context.nyeBolig.betaling,
-      indkomst: context.nyeBolig.indkomst,
-      gaeld: context.nyeBolig.gaeld,
+      // type: context.nyBolig.type,
+      // adresse: context.nyBolig.adresse,
+      // postnr: context.nyBolig.postnr,
+      // by: context.nyBolig.by,
+      // land: context.nyBolig.land,
+      pris: context.nyBolig.pris,
+      betaling: context.nyBolig.betaling,
+      indkomst: context.nyBolig.indkomst,
+      gaeld: context.nyBolig.gaeld,
     });
     // console.log(response);
     if (response && response.length) {
@@ -43,30 +42,30 @@ export default function Finansiering() {
     }
   }
 
-  // Nye Bolig Price
-  function setNyeBoligPris(e) {
-    // context.setNyeBolig((previous) => ({ ...previous, pris: e.target.value }));
-    context.setNyeBolig((previous) => ({ ...previous, pris: parseInt(e.target.value) }));
-    console.log(typeof context.nyeBolig.pris);
-    console.log(context.nyeBolig.pris);
+  // Ny Bolig Price
+  function setNyBoligPris(e) {
+    // context.setNyBolig((previous) => ({ ...previous, pris: e.target.value }));
+    context.setNyBolig((previous) => ({ ...previous, pris: parseInt(e.target.value) }));
+    console.log(typeof context.nyBolig.pris);
+    console.log(context.nyBolig.pris);
     console.log(e.target.value);
   }
-  // Nye Bolig Payment
-  function setNyeBoligBetaling(e) {
-    // context.setNyeBolig((previous) => ({ ...previous, betaling: e.target.value }));
-    context.setNyeBolig((previous) => ({ ...previous, betaling: parseInt(e.target.value) }));
-    console.log(typeof context.nyeBolig.betaling);
-    console.log(context.nyeBolig.betaling);
+  // Ny Bolig Payment
+  function setNyBoligBetaling(e) {
+    // context.setNyBolig((previous) => ({ ...previous, betaling: e.target.value }));
+    context.setNyBolig((previous) => ({ ...previous, betaling: parseInt(e.target.value) }));
+    console.log(typeof context.nyBolig.betaling);
+    console.log(context.nyBolig.betaling);
     console.log(e.target.value);
   }
-  // Nye Bolig Income
-  function setNyeBoligIndkomst(e) {
-    context.setNyeBolig((previous) => ({ ...previous, indkomst: e.target.value }));
+  // Ny Bolig Income
+  function setNyBoligIndkomst(e) {
+    context.setNyBolig((previous) => ({ ...previous, indkomst: e.target.value }));
     console.log(e.target.value);
   }
-  // Nye Bolig Debt
-  function setNyeBoligGaeld(e) {
-    context.setNyeBolig((previous) => ({ ...previous, gaeld: e.target.value }));
+  // Ny Bolig Debt
+  function setNyBoligGaeld(e) {
+    context.setNyBolig((previous) => ({ ...previous, gaeld: e.target.value }));
     console.log(e.target.value);
   }
 
@@ -93,14 +92,14 @@ export default function Finansiering() {
       <StepsMobile></StepsMobile>
       {/**** FORM ****/}
       <div className="form-wrapper">
-        <form id="nyeBoligFormTwo" onSubmit={submit}>
-          <h2>Finansiering af nye bolig</h2>
-          {/* Nye Bolig Prisen  */}
+        <form id="nyBoligFormTwo" onSubmit={submit}>
+          <h2>Finansiering af ny bolig</h2>
+          {/* Ny Bolig Prisen  */}
           <div className="flex-column-left field">
             <label htmlFor="ny_bolig_prisen">Hvad ønsker du at købe bolig for?</label>
             <div className="input-group">
               <div className="kr">kr.</div>
-              <input type="number" name="ny_bolig_prisen" id="ny_bolig_prisen" placeholder="" minLength="2" required onChange={setNyeBoligPris} />
+              <input type="number" name="ny_bolig_prisen" id="ny_bolig_prisen" placeholder="" minLength="2" required onChange={setNyBoligPris} />
               <span className="error-message">Enter a valid value</span>
             </div>
           </div>
@@ -109,13 +108,13 @@ export default function Finansiering() {
             <label htmlFor="ny_bolig_udbetaling">Hvor meget kan du selv lægge til udbetaling i boligen? Inkludér evt. overskud fra salg af din nuværende bolig.</label>
             <div className="input-group">
               <div className="kr">kr.</div>
-              <input type="number" name="ny_bolig_udbetaling" id="ny_bolig_udbetaling" placeholder="" minLength="2" required onChange={setNyeBoligBetaling} />
+              <input type="number" name="ny_bolig_udbetaling" id="ny_bolig_udbetaling" placeholder="" minLength="2" required onChange={setNyBoligBetaling} />
               <span className="error-message">Enter a valid value</span>
             </div>
           </div>
           {/* Din Lånbehov Calculate it with a function and Update */}
           <div className="amount-expected">
-            <h4>Lånebehov til boligkøb: {context.nyeBolig.pris - context.nyeBolig.betaling}</h4>
+            <h4>Lånebehov til boligkøb: {context.nyBolig.pris - context.nyBolig.betaling}</h4>
           </div>
           <h2>Indkomst og gæld</h2>
           {/* Husstandsindkomst  */}
@@ -123,7 +122,7 @@ export default function Finansiering() {
             <label htmlFor="husstandsindkomst">Månedlig husstandsindkomst (før skat)</label>
             <div className="input-group">
               <div className="kr">kr.</div>
-              <input type="number" name="husstandsindkomst" id="husstandsindkomst" placeholder="" minLength="2" required onChange={setNyeBoligIndkomst} />
+              <input type="number" name="husstandsindkomst" id="husstandsindkomst" placeholder="" minLength="2" required onChange={setNyBoligIndkomst} />
               <span className="error-message">Enter a valid value</span>
             </div>
             <span className="smaller">(Inkludér eks. løn, folkepension, SU, sociale ydelser og lignende)</span>
@@ -133,7 +132,7 @@ export default function Finansiering() {
             <label htmlFor="anden_gæld_first">Hvor meget anden gæld har du/I efter boligkøbet?</label>
             <div className="input-group">
               <div className="kr">kr.</div>
-              <input type="number" name="anden_gæld_first" id="anden_gæld_first" placeholder="" minLength="2" required onChange={setNyeBoligGaeld} />
+              <input type="number" name="anden_gæld_first" id="anden_gæld_first" placeholder="" minLength="2" required onChange={setNyBoligGaeld} />
               <span className="error-message">Enter a valid value</span>
             </div>
             <span className="smaller">(Inkludér eks. billån, forbrugslån, lån i andre boliger der ikke sælges og lignende)</span>

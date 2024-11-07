@@ -12,20 +12,20 @@ export default function DinBoligsituation() {
 
   // //Steps
   // useEffect(() => {
-  //   const step = document.getElementById("step-din-nye-bolig");
+  //   const step = document.getElementById("step-din-ny-bolig");
   //   console.log(step);
   //   step.classList.remove("step-disabled");
   // }, []);
 
   function errorMessage(e) {}
-  // Function Submit Nye Bolig 1
+  // Function Submit Ny Bolig 1
   function submit(e) {
     e.preventDefault();
     patchBolig();
     router.push(`/loan/steps/02-din-boligsituation/02-din-boligsituation`);
   }
 
-  // // Patch Nye Bolig in Supabase
+  // // Patch Ny Bolig in Supabase
   async function patchBolig() {
     const response = await patchNuvaerendeBolig({
       // id: 1,
@@ -128,11 +128,11 @@ export default function DinBoligsituation() {
       <div className="step-back-wrapper">
         <div className="flex-row-space-around step-back-container">
           <div className="flex-row-left">
-            <Link href="../../../loan/steps/01-din-nye-bolig/01-din-nye-bolig" className="flex-row-left back">
+            <Link href="../../../loan/steps/01-din-ny-bolig/01-din-ny-bolig" className="flex-row-left back">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
               </svg>
-              Din nye bolig
+              Din ny bolig
             </Link>
           </div>
           <div className="flex-row-right">

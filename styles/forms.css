@@ -42,11 +42,11 @@ a.step-disabled {
   border: 1px solid var(--border);
   background-color: var(--background);
   border-radius: var(--border-radius-10);
-  color: var(--border);
+  color: var(--step-text-and-icon);
   font-weight: 600;
 }
 a.step-disabled svg {
-  fill: var(--border) !important;
+  fill: var(--background) !important;
 }
 
 .step-back-wrapper {

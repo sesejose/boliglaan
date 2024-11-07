@@ -7,6 +7,7 @@ import Basket from "./Basket";
 
 export default function Nav() {
   const context = useContext(Context);
+  // (Context) here is the variable created in Context.js
   return (
     <>
       <nav className="nav">
@@ -20,7 +21,7 @@ export default function Nav() {
           <div id="menu-desk">
             <ul>
               <li>
-                <Link href={"/loan/steps/01-din-nye-bolig/01-din-nye-bolig"} onClick={closeMenu}>
+                <Link href={"/loan/steps/01-din-ny-bolig/01-din-ny-bolig"} onClick={closeMenu}>
                   <p>Ansøg om lån</p>
                 </Link>
               </li>
@@ -88,7 +89,7 @@ export default function Nav() {
         <div id="menu">
           <ul>
             <li>
-              <Link className="" href={"/loan/steps/01-din-nye-bolig/01-din-nye-bolig"} onClick={closeMenu}>
+              <Link className="" href={"/loan/steps/01-din-ny-bolig/01-din-ny-bolig"} onClick={closeMenu}>
                 <p>Ansøg om lån</p>
               </Link>
             </li>

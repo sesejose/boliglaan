@@ -17,8 +17,8 @@ export default function MyApp({ Component, pageProps }) {
   // Input chat
   const [chatInput, setChatInput] = useState();
 
-  // 01. Din nye bolig
-  const [nyeBolig, setNyeBolig] = useState({
+  // 01. Din ny bolig
+  const [nyBolig, setNyBolig] = useState({
     id: "",
     type: "",
     adresse: "",
@@ -78,22 +78,22 @@ export default function MyApp({ Component, pageProps }) {
   });
   // Lånebehov
   const [laanebehov, setLaanebehov] = useState({});
-  // What is in the table of Nye Bolig
-  const [orders, setOrders] = useState([]);
-  // Nye Bolig ID
-  const [orderId, setOrderId] = useState();
+  // What is in the table of Ny Bolig
+  const [boliger, setBoliger] = useState([]);
+  // Ny Bolig ID
+  const [boligId, setBoligId] = useState();
   // Steps
-  const [dinNyeBolig, setDinNyeBolig] = useState();
+  const [dinNyBolig, setDinNyBolig] = useState();
   const [dinBoligSituation, setDinBoligSituation] = useState();
   const [ejendele, setEjendele] = useState();
   const [lidtOmDig, setLidtOmDig] = useState();
   const [indtaegter, setIntaegter] = useState();
   const [opsparing, setOpsparing] = useState();
 
-  // Fetch Orders from Supabase (Nye Bolig table)
+  // Fetch Boliger from Supabase (Ny Bolig table)
   useEffect(() => {
-    async function getOrders() {
-      const url = "https://wimczkvwnsepkvefdtzp.supabase.co/rest/v1/nyeBolig";
+    async function getBoliger() {
+      const url = "https://wimczkvwnsepkvefdtzp.supabase.co/rest/v1/nyBolig";
       const headers = {
         "Content-Type": "application/json",
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpbWN6a3Z3bnNlcGt2ZWZkdHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjY5NTYsImV4cCI6MjAwMDg0Mjk1Nn0.wKsEPjpUvAZEzzuau6t0gW8X5-F3kmoIvaAcoUV-BK4",
@@ -109,27 +109,27 @@ export default function MyApp({ Component, pageProps }) {
       };
       // Await then execute the code.
       const res = await fetch(url, options, body); // Fetchs the data (await)
-      const orders = await res.json(); //When it's done getting it
-      setOrders(orders);
-      console.log(orders);
-      generateNewId(orders);
+      const boliger = await res.json(); //When it's done getting it
+      setBoliger(boliger);
+      console.log(boliger);
+      generateNewId(boliger);
+      // console.log("Pris:", boliger[0].pris);
     }
-    getOrders();
+    getBoliger();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  //Generate New ID
   function generateNewId(arr) {
-    setOrderId(arr[arr.length - 1].id + 3);
-    console.log(orderId);
-    console.log(typeof orderId);
+    setBoligId((arr[arr.length - 1].id = arr[arr.length - 1].id + 1));
+    console.log(boligId);
+    console.log(typeof boligId);
   }
-
-  //Gældsfaktor
 
   return (
     <>
       <Context.Provider
-        value={{ orderId, setOrderId, orders, setOrders, nyeBolig, setNyeBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig, laanebehov, setLaanebehov, chatInput, setChatInput, dinNyeBolig, setDinNyeBolig }}
+        value={{ boligId, setBoligId, boliger, setBoliger, nyBolig, setNyBolig, nuvaerendeBolig, setNuvaerendeBolig, andenNuvaerendeBolig, setAndenNuvaerendeBolig, laanebehov, setLaanebehov, chatInput, setChatInput, dinNyBolig, setDinNyBolig }}
       >
         <Layout>
           <Component {...pageProps} />

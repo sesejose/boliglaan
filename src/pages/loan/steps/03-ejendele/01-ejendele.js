@@ -3,8 +3,8 @@ import Link from "next/link";
 import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
 import { useEffect } from "react";
-// import { postNyeBolig } from "../../../../../components/Post";
-import { patchNyeBolig } from "../../../../../components/Patch";
+// import { postNyBolig } from "../../../../../components/Post";
+import { patchNyBolig } from "../../../../../components/Patch";
 import { useRouter } from "next/router";
 
 export default function Ejendele() {
@@ -40,11 +40,11 @@ export default function Ejendele() {
             </div>
             {/* Ejer eller Andel  */}
             <div className="radio-toolbar">
-              <input type="radio" id="nye_bolig_ejersbolig" name="nye_bolig_andel_eller_ejerbolig" value="Ejersbolig" required />
-              <label htmlFor="nye_bolig_ejersbolig">Ejer</label>
+              <input type="radio" id="ny_bolig_ejersbolig" name="ny_bolig_andel_eller_ejerbolig" value="Ejersbolig" required />
+              <label htmlFor="ny_bolig_ejersbolig">Ejer</label>
 
-              <input type="radio" id="nye_bolig_andelsbolig" name="nye_bolig_andel_eller_ejerbolig" value="Andelsbolig" required />
-              <label htmlFor="nye_bolig_andelsbolig">Andel</label>
+              <input type="radio" id="ny_bolig_andelsbolig" name="ny_bolig_andel_eller_ejerbolig" value="Andelsbolig" required />
+              <label htmlFor="ny_bolig_andelsbolig">Andel</label>
             </div>
           </fieldset>
           {/* Submit  */}

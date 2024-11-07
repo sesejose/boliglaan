@@ -3,31 +3,31 @@ import Link from "next/link";
 import Context from "../../../../../components/Context";
 import { useState, useContext } from "react";
 import { useEffect } from "react";
-// import { postNyeBolig } from "../../../../../components/Post";
-import { patchNyeBolig } from "../../../../../components/Patch";
+// import { postNyBolig } from "../../../../../components/Post";
+import { patchNyBolig } from "../../../../../components/Patch";
 import { useRouter } from "next/router";
 
-export default function DinNyeBolig(props) {
+export default function DinNyBolig(props) {
   const context = useContext(Context);
   const router = useRouter();
 
   function errorMessage(e) {}
-  // Function Submit Nye Bolig 1
+  // Function Submit Ny Bolig 1
   function submit(e) {
     e.preventDefault();
     postBolig();
-    router.push(`/loan/steps/01-din-nye-bolig/02-din-nye-bolig`);
+    router.push(`/loan/steps/01-din-ny-bolig/02-din-ny-bolig`);
   }
 
-  // Patch Nye Bolig in Supabase
+  // Patch Ny Bolig in Supabase
   async function postBolig() {
-    const response = await patchNyeBolig({
+    const response = await patchNyBolig({
       // id: 1,
-      type: context.nyeBolig.type,
-      adresse: context.nyeBolig.adresse,
-      postnr: context.nyeBolig.postnr,
-      by: context.nyeBolig.by,
-      land: context.nyeBolig.land,
+      type: context.nyBolig.type,
+      adresse: context.nyBolig.adresse,
+      postnr: context.nyBolig.postnr,
+      by: context.nyBolig.by,
+      land: context.nyBolig.land,
       // pris: "",
       // betaling: "",
       // indkomst: "",
@@ -35,36 +35,36 @@ export default function DinNyeBolig(props) {
     });
   }
 
-  // Nye Bolig type
-  function setNyeBoligType(e) {
-    context.setNyeBolig((previous) => ({ ...previous, type: e.target.value }));
+  // Ny Bolig type
+  function setNyBoligType(e) {
+    context.setNyBolig((previous) => ({ ...previous, type: e.target.value }));
     console.log(e.target.value);
-    console.log(typeof context.nyeBolig.type);
+    console.log(typeof context.nyBolig.type);
   }
 
-  // Nye Bolig Adresse
-  function setNyeBoligAdresse(e) {
-    context.setNyeBolig((previous) => ({ ...previous, adresse: e.target.value }));
+  // Ny Bolig Adresse
+  function setNyBoligAdresse(e) {
+    context.setNyBolig((previous) => ({ ...previous, adresse: e.target.value }));
     console.log(e.target.value);
-    console.log(typeof context.nyeBolig.adresse);
+    console.log(typeof context.nyBolig.adresse);
   }
-  // Nye Bolig Postnr
-  function setNyeBoligPostnr(e) {
-    context.setNyeBolig((previous) => ({ ...previous, postnr: e.target.value }));
-    console.log(context.nyeBolig.postnr);
-    console.log(typeof context.nyeBolig.postnr);
+  // Ny Bolig Postnr
+  function setNyBoligPostnr(e) {
+    context.setNyBolig((previous) => ({ ...previous, postnr: e.target.value }));
+    console.log(context.nyBolig.postnr);
+    console.log(typeof context.nyBolig.postnr);
   }
-  // Nye Bolig By
-  function setNyeBoligBy(e) {
-    context.setNyeBolig((previous) => ({ ...previous, by: e.target.value }));
+  // Ny Bolig By
+  function setNyBoligBy(e) {
+    context.setNyBolig((previous) => ({ ...previous, by: e.target.value }));
     console.log(e.target.value);
-    console.log(typeof context.nyeBolig.by);
+    console.log(typeof context.nyBolig.by);
   }
-  // Nye Bolig Land
-  function setNyeBoligLand(e) {
-    context.setNyeBolig((previous) => ({ ...previous, land: e.target.value }));
+  // Ny Bolig Land
+  function setNyBoligLand(e) {
+    context.setNyBolig((previous) => ({ ...previous, land: e.target.value }));
     console.log(e.target.value);
-    console.log(typeof context.nyeBolig.land);
+    console.log(typeof context.nyBolig.land);
   }
 
   return (
@@ -158,8 +158,8 @@ export default function DinNyeBolig(props) {
       <StepsMobile></StepsMobile>
       {/**** FORM ****/}
       <div className="form-wrapper">
-        <form id="nyeBoligFormOne" onSubmit={submit}>
-          <h2>Din nye bolig</h2>
+        <form id="nyBoligFormOne" onSubmit={submit}>
+          <h2>Din ny bolig</h2>
           <p>For at bankerne kan komme med et tilbud på din økonomi, er de nødt til at vide noget omkring dine ønsker og behov.</p>
           <fieldset className="flex-column-left">
             <div className="flex-row-left">
@@ -167,42 +167,42 @@ export default function DinNyeBolig(props) {
             </div>
             {/* Ejer eller Andel  */}
             <div className="radio-toolbar">
-              <input type="radio" id="nye_bolig_ejersbolig" name="nye_bolig_andel_eller_ejerbolig" value="Ejersbolig" required onClick={setNyeBoligType} />
-              <label htmlFor="nye_bolig_ejersbolig">Ejer</label>
+              <input type="radio" id="ny_bolig_ejersbolig" name="ny_bolig_andel_eller_ejerbolig" value="Ejersbolig" required onClick={setNyBoligType} />
+              <label htmlFor="ny_bolig_ejersbolig">Ejer</label>
 
-              <input type="radio" id="nye_bolig_andelsbolig" name="nye_bolig_andel_eller_ejerbolig" value="Andelsbolig" required onClick={setNyeBoligType} />
-              <label htmlFor="nye_bolig_andelsbolig">Andel</label>
+              <input type="radio" id="ny_bolig_andelsbolig" name="ny_bolig_andel_eller_ejerbolig" value="Andelsbolig" required onClick={setNyBoligType} />
+              <label htmlFor="ny_bolig_andelsbolig">Andel</label>
             </div>
           </fieldset>
-          {/* Nye Bolig Adresse */}
+          {/* Ny Bolig Adresse */}
           <div className="flex-column-left">
             <p>Hvad er adressen på den bolig, du ønsker at købe? (valgfrit)</p>
 
             {/* Adresse  */}
             <div className="flex-column-left field">
-              <label htmlFor="adresse_nye_bolig">Adresse</label>
-              <input type="text" name="adresse_nye_bolig" id="adresse_nye_bolig" placeholder="Adresse" minLength="2" required onChange={setNyeBoligAdresse} />
-              <span className="nyebolig-error-msg">Enter a valid value</span>
+              <label htmlFor="adresse_ny_bolig">Adresse</label>
+              <input type="text" name="adresse_ny_bolig" id="adresse_ny_bolig" placeholder="Adresse" minLength="2" required onChange={setNyBoligAdresse} />
+              <span className="nybolig-error-msg">Enter a valid value</span>
             </div>
 
             <div className="two-inputs-row">
               {/* Postnr.  */}
               <div className="flex-column-left field">
-                <label htmlFor="postnr_nye_bolig">Postnr.</label>
-                <input type="number" name="postnr_nye_bolig" id="postnr_nye_bolig" placeholder="Postnr." minLength="4" required onChange={setNyeBoligPostnr} />
+                <label htmlFor="postnr_ny_bolig">Postnr.</label>
+                <input type="number" name="postnr_ny_bolig" id="postnr_ny_bolig" placeholder="Postnr." minLength="4" required onChange={setNyBoligPostnr} />
                 <span className="error-message">Enter a valid value</span>
               </div>
               {/* By  */}
               <div className="flex-column-left field">
-                <label htmlFor="by_nye_bolig">By</label>
-                <input type="text" name="by_nye_bolig" id="by_nye_bolig" placeholder="By" minLength="2" required onChange={setNyeBoligBy} />
+                <label htmlFor="by_ny_bolig">By</label>
+                <input type="text" name="by_ny_bolig" id="by_ny_bolig" placeholder="By" minLength="2" required onChange={setNyBoligBy} />
                 <span className="error-message">Enter a valid value</span>
               </div>
             </div>
-            {/* Nye Bolig Land */}
+            {/* Ny Bolig Land */}
             <div className="flex-column-left field">
-              <label htmlFor="land_nye_bolig">Land</label>
-              <input type="text" name="land_nye_bolig" id="land_nye_bolig" placeholder="Land" minLength="2" required onChange={setNyeBoligLand} />
+              <label htmlFor="land_ny_bolig">Land</label>
+              <input type="text" name="land_ny_bolig" id="land_ny_bolig" placeholder="Land" minLength="2" required onChange={setNyBoligLand} />
               <span className="error-message">Enter a valid value</span>
             </div>
           </div>
@@ -252,6 +252,6 @@ function closeModalPhone() {
 
 // function submit(e) {
 //   // e.preventDefault();
-//   window.location.href = "/loan/steps/01-din-nye-bolig/02-din-nye-bolig";
-//   document.getElementById("nyeBoligFormOne").submit();
+//   window.location.href = "/loan/steps/01-din-ny-bolig/02-din-ny-bolig";
+//   document.getElementById("nyBoligFormOne").submit();
 // }

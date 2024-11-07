@@ -166,11 +166,11 @@ export default function DinBoligsituationLån() {
       <div className="step-back-wrapper">
         <div className="flex-row-space-around step-back-container">
           <div className="flex-row-left">
-            <Link href="../../../loan/steps/01-din-nye-bolig/01-din-nye-bolig" className="flex-row-left back">
+            <Link href="../../../loan/steps/01-din-ny-bolig/01-din-ny-bolig" className="flex-row-left back">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
               </svg>
-              Din nye bolig
+              Din ny bolig
             </Link>
           </div>
           <div className="flex-row-right">
@@ -339,11 +339,11 @@ export default function DinBoligsituationLån() {
               <legend>Skal du låne til boligforbedringer?</legend>
             </div>
             <div className="radio-toolbar">
-              <input type="radio" id="nye_laan_ja" name="nye_laan" value="Ja" required onClick={setNuvaerendeBoligNyLaan} />
-              <label htmlFor="nye_laan_ja">Ja</label>
+              <input type="radio" id="ny_laan_ja" name="ny_laan" value="Ja" required onClick={setNuvaerendeBoligNyLaan} />
+              <label htmlFor="ny_laan_ja">Ja</label>
 
-              <input type="radio" id="nye_laan_nej" name="nye_laan" value="Nej" required onClick={setNuvaerendeBoligNyLaan} />
-              <label htmlFor="nye_laan_nej">Nej</label>
+              <input type="radio" id="ny_laan_nej" name="ny_laan" value="Nej" required onClick={setNuvaerendeBoligNyLaan} />
+              <label htmlFor="ny_laan_nej">Nej</label>
             </div>
           </fieldset>
 

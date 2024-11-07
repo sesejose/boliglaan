@@ -1,6 +1,6 @@
-export async function postNyeBolig(payload) {
+export async function postNyBolig(payload) {
   const url = "https://wimczkvwnsepkvefdtzp.supabase.co";
-  const res = await fetch(url + "/rest/v1/nyeBolig", {
+  const res = await fetch(url + "/rest/v1/nyBolig", {
     method: "POST",
     headers: {
       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndpbWN6a3Z3bnNlcGt2ZWZkdHpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNjY5NTYsImV4cCI6MjAwMDg0Mjk1Nn0.wKsEPjpUvAZEzzuau6t0gW8X5-F3kmoIvaAcoUV-BK4",
@@ -27,7 +27,7 @@ const options = {
   body: '{"id":2,"type":"Andel","adresse":"Rubinsteinsvej 14, 2tv","postnr":2450,"by":"København","land":"Danmark","pris":400000,"betaling":1800000,"indkomst":70000,"gaeld":500000}'
 };
 
-fetch('https://wimczkvwnsepkvefdtzp.supabase.co/rest/v1/nyebolig', options)
+fetch('https://wimczkvwnsepkvefdtzp.supabase.co/rest/v1/nybolig', options)
   .then(response => response.json())
   .then(response => console.log(response))
   .catch(err => console.error(err));
